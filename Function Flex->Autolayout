@@ -1,0 +1,90 @@
+import React, {Component} from 'react';
+import {  View,StyleSheet,Text} from 'react-native';
+
+export default class Demo extends Component{
+  render(){
+    return(
+        <View style={note.boder}>
+        {/* Row1 */}
+        <View style={note.row}>
+        <View style={note.col}>
+        <Text style={note.number} >1</Text>
+        <Text style={note.text}></Text>
+        </View>
+        <View style={note.col}>
+        <Text style={note.number} >2</Text>
+        <Text style={note.text}>ABC</Text>
+        </View>
+        <View style={note.col}>
+        <Text style={note.number} >3</Text>
+        <Text style={note.text}>DEF</Text>
+        </View>
+        </View>
+
+        {/* Row2 */}
+        <View style={note.row}>
+        <View style={note.col}>
+        <Text style={note.number} >4</Text>
+        <Text style={note.text}>GHI</Text>
+        </View>
+        <View style={note.col}>
+        <Text style={note.number} >5</Text>
+        <Text style={note.text}>JKL</Text>
+        </View>
+        <View style={note.col}>
+        <Text style={note.number} >6</Text>
+        <Text style={note.text}>MNO</Text>
+        </View>
+        </View>
+
+        {/* Row3 */}
+        <View style={note.row}>
+        <View style={note.col}>
+        <Text style={note.number} >7</Text>
+        <Text style={note.text}>PQRS</Text></View>
+        <View style={note.col}>
+        <Text style={note.number} >8</Text>
+        <Text style={note.text}>TUV</Text></View>
+        <View style={note.col}>
+        <Text style={note.number} >9</Text>
+        <Text style={note.text}>WXYZ</Text></View>
+        </View>
+
+        <View style={note.row}>
+        <View style={note.col}></View>
+        <View style={note.col}>
+        <Text style={note.number} >0</Text>
+        <Text style={note.text}></Text>
+        </View>
+        <View style={note.col}>
+        <Text style={note.number} >x</Text>
+        <Text style={note.text}></Text>
+        </View>
+        </View>
+
+        </View>
+    );
+  }
+      
+}
+var note =StyleSheet.create({
+    boder:{
+        flex:1
+    },
+    row:{
+        flex:1,
+        borderBottomColor:'grey',
+        borderBottomWidth:1,
+        flexDirection:'row'
+    },
+    col:{
+       flex:1,
+       borderRightWidth:1,
+       borderRightColor:'grey',
+       justifyContent:'center',
+       alignItems:'center',
+    },
+    number:{
+        fontSize: 40
+    }
+});
