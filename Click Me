@@ -1,0 +1,33 @@
+import React, {Component} from 'react';
+import {  View,Text,TouchableOpacity,StyleSheet} from 'react-native';
+
+ export default class Demo extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            numberLucky:999
+        }
+    }
+
+
+    clickMe(){
+        console.log('Click ME')
+        this.setState({
+            numberLucky:this.state.numberLucky+1
+        });
+    }
+
+
+
+    render(){
+        return(
+            <View>
+            <Text style={{fontSize:100}}>{this.state.numberLucky}</Text>
+            <TouchableOpacity onPress={()=>{this.clickMe()}}>
+            <View style={{width:100,height:20,backgroundColor: 'red'}}></View>    
+            </TouchableOpacity> 
+            </View>
+        )
+    }
+
+ }
