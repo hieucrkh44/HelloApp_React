@@ -1,0 +1,65 @@
+**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, {Component} from 'react';
+import {  View,Text,TouchableOpacity,StyleSheet,TextInput} from 'react-native';
+import Button from 'react-native-button'
+ export default class Demo extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            newText:'',
+            buttonText:''
+        }
+    }
+
+    render(){
+        return(
+            <View>
+                <TextInput
+                    style={{height:40,
+                    borderBottomColor:'gray',
+                    marginLeft:30,
+                    marginRight:30,
+                    marginTop:20,
+                    marginBottom: 10,
+                    borderBottomWidth:1
+            }}
+            onChangeText={(text)=>this.setState({newText:text})}
+            placeholder="Enter your text!"
+            value={this.state.newText}
+            />
+            <Button
+                style={{fontSize: 18,color:'white'}}    
+                containerStyle={{
+                    padding: 8,
+                    marginLeft:70,
+                    marginRight: 70,
+                    height:40,
+                    borderRadius: 6,
+                    backgroundColor:'mediumseagreen'
+                }}
+            onPress={()=>{
+                if (this.state.newText.length==0) {
+                    alert("you must enter text");
+                    return;
+                }
+                this.setState({buttonText:this.state.newText})
+
+            }}            
+            >
+            ADD
+            </Button>
+            <Text>
+                {this.state.buttonText}
+            </Text>
+            </View>
+
+        )
+    }
+ }
